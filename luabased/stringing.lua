@@ -1,4 +1,4 @@
-local _M = {}
+local _M_ = {}
 local mathing = require("luabased.mathing")
 
 -- we make some global functions local as this will improve performances in
@@ -14,7 +14,7 @@ local type = type
 local StringFormattingSettings = {}
 
 
-function _M.conkat(...)
+function _M_.conkat(...)
   --[[
   The loop-safe string concatenation method.
   All args passed are converted to string using tostring()
@@ -27,7 +27,7 @@ function _M.conkat(...)
 end
 
 
-function _M.split(str, sep)
+function _M_.split(str, sep)
   --[[
   Same as python's string.split().
 
@@ -42,7 +42,7 @@ function _M.split(str, sep)
 end
 
 
-function _M.stringify(source, index, settings)
+function _M_.stringify(source, index, settings)
   --[[
   Convert the source to a readable string , based on it's type.
   Args:
@@ -59,13 +59,13 @@ function _M.stringify(source, index, settings)
   end
 
   if (type(source) == "table") then
-    source = _M.table2string(source, index, settings)
+    source = _M_.table2string(source, index, settings)
 
   elseif (type(source) == "number") then
     source = tostring(mathing.round(source, settings.numbers.round))
 
   elseif (type(source) == "string") and settings.strings.display_quotes == true then
-    source = _M.conkat("\"", source, "\"")
+    source = _M_.conkat("\"", source, "\"")
 
   elseif (type(source) == "string") then
     -- do nothing
@@ -80,7 +80,7 @@ function _M.stringify(source, index, settings)
 end
 
 
-function _M.table2string(tablevalue, index, settings)
+function _M_.table2string(tablevalue, index, settings)
   --[[
   Convert a table to human readable string.
   By default formatted on multiples lines for clarity. Specify tdtype=oneline
@@ -146,7 +146,7 @@ function _M.table2string(tablevalue, index, settings)
     -- if table is build with number as keys, just display the value
     if (type(k) == "number") and tsettings.display_indexes == false then
       outtable[#outtable + 1] = inline_indent
-      outtable[#outtable + 1] = _M.stringify(v, index + 1, settings)
+      outtable[#outtable + 1] = _M_.stringify(v, index + 1, settings)
       outtable[#outtable + 1] = ","
       outtable[#outtable + 1] = linebreak
     else
@@ -155,9 +155,9 @@ function _M.table2string(tablevalue, index, settings)
         outtable[#outtable + 1] = ""
       else
         outtable[#outtable + 1] = inline_indent
-        outtable[#outtable + 1] = _M.stringify(k, index + 1, settings)
+        outtable[#outtable + 1] = _M_.stringify(k, index + 1, settings)
         outtable[#outtable + 1] = "="
-        outtable[#outtable + 1] = _M.stringify(v, index + 1, settings)
+        outtable[#outtable + 1] = _M_.stringify(v, index + 1, settings)
         outtable[#outtable + 1] = ","
         outtable[#outtable + 1] = linebreak
       end
@@ -257,4 +257,4 @@ function StringFormattingSettings:new()
 end
 
 
-return _M
+return _M_

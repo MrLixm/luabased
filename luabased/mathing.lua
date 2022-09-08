@@ -1,4 +1,4 @@
-local _M = {}
+local _M_ = {}
 
 -- we make some global functions local as this will improve performances in
 -- heavy loops.
@@ -6,7 +6,7 @@ local mathpi = math.pi
 local mathfloor = math.floor
 local stringformat = string.format
 
-function _M.toint(a, prec)
+function _M_.toint(a, prec)
   --[[
   Converts the given float to an integer representation.
 
@@ -15,7 +15,7 @@ function _M.toint(a, prec)
   return mathfloor(a + 0.5 * prec) -- where prec is 10^n, starting at 0
 end
 
-function _M.round(num, numDecimalPlaces)
+function _M_.round(num, numDecimalPlaces)
   --[[
   Round the given float to the given number of decimal after the separator.
 
@@ -24,7 +24,7 @@ function _M.round(num, numDecimalPlaces)
   return tonumber(stringformat("%." .. (numDecimalPlaces or 0) .. "f", num))
 end
 
-function _M.degree_to_radian(rotation)
+function _M_.degree_to_radian(rotation)
   --[[
   Args:
     rotation(num): rotation value to convert to radian
@@ -35,7 +35,7 @@ function _M.degree_to_radian(rotation)
   return rotation * (mathpi / 180.0)
 end
 
-function _M.radian_to_degree(radian)
+function _M_.radian_to_degree(radian)
   --[[
   Args:
     radian(num): radian value to convert to degree
@@ -47,4 +47,4 @@ function _M.radian_to_degree(radian)
 end
 
 
-return _M
+return _M_
