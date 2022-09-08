@@ -42,14 +42,6 @@ function _M.split(str, sep)
 end
 
 
-function _M.errorc(...)
-  --[[
-  Conacatened error. Arguments are string concatened together.
-  ]]
-  error(_M.conkat(...))
-end
-
-
 function _M.stringify(source, index, settings)
   --[[
   Convert the source to a readable string , based on it's type.
