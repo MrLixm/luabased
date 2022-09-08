@@ -22,5 +22,6 @@ local _self = (...):gsub('%.init$', '')
 _M_.formatting = require(_self .. '.formatting')
 _M_.formatting_settings = require(_self .. '.formatting_settings')
 _M_.mathing = require(_self .. '.mathing')
+_M_.coloring = require(_self .. '.coloring')
 
 return _M_
