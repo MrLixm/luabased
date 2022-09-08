@@ -19,10 +19,10 @@ _M_._LICENSE = [[
 
 local _self = (...):gsub('%.init$', '')
 
-_M_.formatting = require(_self .. '.formatting')
-_M_.formatting_settings = require(_self .. '.formatting_settings')
-_M_.mathing = require(_self .. '.mathing')
 _M_.coloring = require(_self .. '.coloring')
+_M_.mathing = require(_self .. '.mathing')
 _M_.raising = require(_self .. '.raising')
+_M_.stringing = require(_self .. '.stringing')
+
 
 return _M_
