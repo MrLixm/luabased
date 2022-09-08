@@ -6,16 +6,18 @@ local mathpi = math.pi
 local mathfloor = math.floor
 local stringformat = string.format
 
-function _M.round(a, prec)
+function _M.toint(a, prec)
   --[[
+  Converts the given float to an integer representation.
+
   SRC: https://stackoverflow.com/questions/9654496/lua-converting-from-float-to-int
   ]]
   return mathfloor(a + 0.5 * prec) -- where prec is 10^n, starting at 0
 end
 
-function _M.round2(num, numDecimalPlaces)
+function _M.round(num, numDecimalPlaces)
   --[[
-  Should be slower than round(). To verify.
+  Round the given float to the given number of decimal after the separator.
 
   SRC: http://lua-users.org/wiki/SimpleRound
   ]]
