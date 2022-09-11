@@ -1,5 +1,5 @@
 name = "luabased"
-version = "0.1.0"  # version has to be kept in sync with ./luakat/init.lua
+version = "1.0.0"  # version has to be kept in sync with ./luakat/init.lua
 description = "Extending the base lua library with missing features."
 license = "Apache-2.0"
 authors = ["Liam Collod <lcollod@gmail.com>"]

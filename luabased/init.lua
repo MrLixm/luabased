@@ -1,5 +1,5 @@
 local _M_ = {}
-_M_._VERSION = '0.1.0'
+_M_._VERSION = '1.0.0'
 _M_._DESCRIPTION = 'Extending the base lua library with missing features.'
 _M_._LICENSE = [[
    Copyright 2022 Liam Collod
