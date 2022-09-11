@@ -179,14 +179,10 @@ function StringFormattingSettings:new()
 
   -- these are the default values
   local attrs = {
-    ["display_time"] = true,
-    ["display_context"] = true,
-    ["blocks_duplicate"] = true,
-    -- how much decimals should be kept for floating point numbers
     ["numbers"] = {
+      -- how much decimals should be kept for floating point numbers
       ["round"] = 3
     },
-    -- nil by default cause the table2string already have some defaults
     ["tables"] = {
       -- how much whitespaces is considered an indent
       ["indent"] = 4,
@@ -201,16 +197,6 @@ function StringFormattingSettings:new()
       ["display_quotes"] = false
     }
   }
-
-  function attrs:set_display_time(enable)
-    -- enable(bool): true to display the current time as h:m:s
-    self.display_time = enable
-  end
-
-  function attrs:set_display_context(enable)
-    -- enable(bool): true to display Logger.ctx
-    self.display_context = enable
-  end
 
   function attrs:set_blocks_duplicate(enable)
     -- enable(bool): true to enable blocking of repeated messages
