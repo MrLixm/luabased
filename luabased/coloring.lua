@@ -1,16 +1,12 @@
 local _M_ = {}
 
-
+--- Credit ``colour-science`` and ``Easyrgb``.
+--- @param color table r, g and b channel as a table
+--- @param h number hue ; 0-1 range; 1 for no effect
+--- @param s number saturation; 0-1 range; 1 for no effect
+--- @param v number value; 0-1 range; 1 for no effect
+--- @return table {r,g,b}
 function _M_.hsv(color, h, s, v)
-  --[[
-  Credit <colour-science> and <Easyrgb>.
-
-  Args:
-    color(table): r, g and b channel as a table
-    h(num): hue ; 0-1 range; 1 for no effect
-    s(num): saturation; 0-1 range; 1 for no effect
-    v(num): value; 0-1 range; 1 for no effect
-  ]]
 
   local r = color[1]
   local g = color[2]

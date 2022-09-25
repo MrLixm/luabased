@@ -29,3 +29,8 @@ It can then be accessed via :
 ```lua
 local luabased = require("luabased")
 ```
+
+# Development
+
+Type hinting is performed using [EmmyLua - EmmyLua for IntelliJ IDEA 1.3.2 documentation](https://emmylua.github.io/index.html)
+which is itself similar to [LDoc](https://stevedonovan.github.io/ldoc/manual/doc.md.html).
